@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horários - Sinfonia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray">
+    <div class="container painel-grade p-3 m-auto shadow">
+        <header class="grade-header display-flex space-between align-center mb-3">
+            <h2>Quadro de Horários das Práticas</h2>
+            <a href="home.html" class="btn btn-sm btn-outline">Voltar ao Painel Principal</a>
+        </header>
+
+        <section class="table-responsive">
+            <table class="tabela-aulas w-100 table-bordered text-center" id="tabela-principal">
+                <thead class="bg-dark text-white">
+                    <tr>
+                        <th scope="col" class="hora-col">Horário</th>
+                        <th scope="col">Segunda</th>
+                        <th scope="col">Terça</th>
+                        <th scope="col">Quarta</th>
+                        <th scope="col">Quinta</th>
+                        <th scope="col">Sexta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="hora-cell fw-bold">14:00 - 15:30</td>
+                        <td class="aula-teorica">Teoria I</td>
+                        <td class="livre text-muted">-</td>
+                        <td class="aula-teorica">Teoria I</td>
+                        <td class="livre text-muted">-</td>
+                        <td class="ensaio-coletivo bg-warning font-weight-bold">Ensaio Geral (Orquestra)</td>
+                    </tr>
+                    <tr>
+                        <td class="hora-cell fw-bold">16:00 - 17:30</td>
+                        <td class="livre text-muted">-</td>
+                        <td class="pratica-indiv">Prática - Piano</td>
+                        <td class="livre text-muted">-</td>
+                        <td class="pratica-indiv">Canto Coral Téc.</td>
+                        <td class="ensaio-coletivo bg-warning font-weight-bold">Apresentação / Recital</td>
+                    </tr>
+                </tbody>
+                <tfoot class="tfoot-obs">
+                    <tr>
+                        <td colspan="6" class="text-left text-small py-2 px-3 text-muted">
+                            <em>* As salas de estudo individual estão liberadas nos horários com hífen (-).</em>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </div>
+
+    <!--
+    ======================================================================
+    [ COMENTÁRIO DIDÁTICO - PROF. RONALDO ]
+    
+    Por que criamos as tags explicitas <thead>, <tbody>, e <tfoot> nas planilhas, 
+    como demonstrado acima?
+    R: Além do controle semântico para as plataformas de busca e leitura guiada 
+    inclusiva, essa divisão proporciona ao CSS e JavaScript muito mais 
+    previsibilidade. Se você precisar congelar um cabeçalho rodando CSS 
+    (`position: sticky`), é infinitamente mais tranquilo selecionar o <thead> 
+    de forma garantida.
+
+    *** Analogia: ***
+    O seletor nth-child() do CSS permite um controle granular rítmico. Pense nele 
+    como a assinatura de compasso 4/4 na música, o CSS diz: "No tempo forte do 
+    compasso (ex: fileiras pares), preencha o fundo com tom de azul claro."
+    
+    *** DESAFIOS DE CÓDIGO (Para a Aula de CSS): ***
+    1. Utilizando a pseudo-classe ':nth-child(even)', como você criaria o 
+       estilo zebrado para a sua tabela assemelhando-se às planilhas automáticas?
+    2. Como você usaria o ':hover' (efeito do mouse) para iluminar uma <tr> inteira 
+       da tabela quando o cursou passar por cima, facilitando a visualização da linha?
+    ======================================================================
+    -->
+</body>
+</html>

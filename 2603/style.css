@@ -1,0 +1,28 @@
+/*
+======================================================================
+[ AULA DE CSS - PROF. RONALDO ]
+
+Olá, Turma! 
+Este é o arquivo onde toda a mágica visual e beleza vão acontecer.
+Nosso objetivo principal na aula é preencher as regras em branco e experimentar 
+na prática como alterar algo aqui se propaga instantaneamente para os HTMLs.
+
+Dica aos alunos: 
+Mantenham um dos arquivos HTML (ex: landing.html) aberto como aba no 
+seu navegador e usem o live preview (live server se tiverem). Observem a rígida 
+barreira de responsabilidades no front-end: a marcação manda no 'Conteúdo' do 
+projeto enquanto a estilização cascata constrói a 'Aparência' e reatividade.
+======================================================================
+*/
+
+/* 1. Seletores Básicos de Elementos - A Base da Herança */
+body {
+    /* Desafio: Colocar o background da página global para um cinza muito claro (#f4f6f9), 
+       remover quebras de margem com margin 0, e definir 'font-family: sans-serif' */
+}
+
+/* 2. Hierarquia e Classes Customizadas 
+   Podem virar regras potentes (Aguardamos os desafios de classe!) */
+
+
+/* 3. Grid e Flexbox Responsivos (Sua vez na folha mestra) */
