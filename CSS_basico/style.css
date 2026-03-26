@@ -1,0 +1,151 @@
+/*
+======================================================================
+[ AULA: O BÁSICO DO CSS ANTES DO 'SINFONIA' ]
+Por Prof. Ronaldo
+
+Este arquivo (style.css) está perfeitamente linkado ao index.html graças  
+à tag <link> que escrevemos no começo. 
+
+Siga as instruções abaixo (que estão comentadas) e vá retirando 
+os símbolos de comentário (/* */ /*) para ver a mágica acontecendo na sua tela!
+Lembre-se de salvar o arquivo (Ctrl+S) e apertar F5 no navegador para testar.
+======================================================================
+*/
+
+/* ----------------------------------------------------------------------
+   PARTE 1: Seletores Básicos de TAG (O esqueleto)
+   ---------------------------------------------------------------------- */
+/* 
+  1. A tag <body> representa a página do navegador inteira!
+  Desafio: Descomente o código abaixo para que ele volte a funcionar. 
+  Veja como a página inteira muda a fonte de texto.
+*/
+body {
+    /* background-color: #f7f9fc; */
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 30px;
+    color: #333;
+}
+
+/* 
+  2. A tag <h1> representa o título principal.
+  Desafio: Adicione uma cor diferente usando a palavra-chave em inglês 
+  (ex: blue, navy, darkred).
+*/
+h1 {
+    /* Escreva seu código aqui. Ex: color: sua_cor; */
+    
+}
+
+/* 
+  Mestre Jedi do Código!
+  Pinte APENAS os elementos parágrafos (<p>) que você encontrar espalhados pelo HTML:
+*/
+p {
+    line-height: 1.6;
+    /* font-size: 18px; */  /* <-- Descomente e ative este comando! */
+}
+
+
+/* ----------------------------------------------------------------------
+   PARTE 2: CLASSES E IDs (Como chamar elementos pelo próprio nome)
+   ---------------------------------------------------------------------- */
+/* 
+  3. Classes (identificadas por um "PONTO FINAL" no começo do nome -> .)
+  Lá, o HTML diz: class="destaque"
+  Desafio: Retire o estilo de comentário destas 3 linhas para colocar borda!
+*/
+.destaque {
+    background-color: #fff3cd; /* Amarelo tipo marca-texto clarinho */
+    
+    /* border: 2px solid orange; */
+    /* padding: 15px; */
+    /* border-radius: 10px; */
+}
+
+/* 
+  4. IDs (identificados por uma "HASHTAG/JOGO DA VELHA" no começo -> #)
+  Lá, o HTML diz: id="paragrafo-unico"
+  Desafio: Escreva os seguintes atributos para este parágrafo que é único na página:
+  font-weight: bold;
+  font-size: 1.2rem;
+*/
+#paragrafo-unico {
+    
+}
+
+
+/* ----------------------------------------------------------------------
+   PARTE 3: POSICIONANDO AS COISAS (Como mover a mobília do seu site)
+   ---------------------------------------------------------------------- */
+   
+/* Preparação dos blocos para os exercícios abaixo */
+.quadrado {
+    width: 200px;
+    height: 100px;
+    background-color: #2c3e50; 
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* 
+  5. FLOAT (Flutuação)
+  Flutuar faz o elemento se comportar como uma imagem pequena numa matéria 
+  de um jornal: ele cola num lado da margem e o texto flui cercando o outro lado.
+  Desafio: 
+  Para ".flutua-esquerda" escreva 'float: left;'
+  Para ".flutua-direita", a cor E91E63 já apliquei! Adicione 'float: right;'.
+*/
+
+.flutua-esquerda {
+    /* Digite aqui: */
+    
+}
+
+.flutua-direita {
+    background-color: #E91E63;
+    /* Digite aqui: */
+    
+}
+
+/* 
+  6. POSITION RELATIVE vs ABSOLUTE (Georeferenciamento no CSS)
+  Isso é extremamente poderoso, mas requer cuidado redobrado!
+*/
+.container-relativo {
+    background-color: #d1ecf1; /* Fundo azul claro para identificarmos "o Terreno" */
+    border: 2px dashed #17a2b8;
+    padding: 20px;
+    height: 250px;
+    margin-top: 40px;
+    
+    /* 
+      1º PASSO DA MÁGICA:
+      Este elemento PAI é RELATIVE! Ele avisa aos elementos dentro dele (Absolute): 
+      "Respeitem os meus limites, se forem voar, o teto original passa a ser o MEU TETO."
+    */
+    position: relative; 
+}
+
+.caixa-absoluta {
+    background-color: #17a2b8;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    
+    /* 
+      2º PASSO DA MÁGICA (DESAFIO FINAL DA AULA!):
+      Digite: 
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      
+      E veja a caixa ir flutuando como mágica para o canto exato superior direito 
+      do recipiente azul.
+    */
+    
+}

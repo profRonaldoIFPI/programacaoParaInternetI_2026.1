@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao CSS: O Básico (Antes do Sinfonia)</title>
+    
+    <!-- FORMA 1: ARQUIVO EXTERNO (A mais recomendada!) -->
+    <!-- 
+      Analogia: É como ter o manual de pintura de todos os 10 prédios 
+      da rua guardado num único escritório. Mudou a cor lá? Todos os prédios mudam!
+    -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FORMA 2: TAG <style> (CSS Interno) -->
+    <!-- 
+      Analogia: É como ter uma regra de pintura apenas para este prédio 
+      específico, afixada no mural de avisos da recepção.
+    -->
+    <style>
+        /* Desafio: Mude a cor do texto ('color') da classe "texto-interno" para azul (blue) */
+        .texto-interno {
+            /* Seu código vem aqui: */
+            
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bem-vindo aos Fundamentos do CSS!</h1>
+        <p>Antes de estilizarmos a Escola Sinfonia, precisamos entender a estrutura base.</p>
+    </header>
+
+    <main>
+        <!-- ======================================================== -->
+        <!-- SESSÃO 1: FORMAS DE INSERIR CSS                          -->
+        <!-- ======================================================== -->
+        <section id="formas-de-usar">
+            <h2>1. Formas de usar CSS na sua página</h2>
+            
+            <p class="texto-interno">
+                Eu sou um texto que deve ser pintado pela Tag &lt;style&gt; lá no &lt;head&gt; do HTML. 
+                Vá até lá e escreva a regra!
+            </p>
+
+            <!-- FORMA 3: CSS INLINE (A menos recomendada!) -->
+            <!-- 
+              Analogia: É como pintar um único tijolo na mão. Dá muito trabalho 
+              se você precisar mudar a cor de 10.000 tijolos depois!
+              Em tags html ele se chama atributo "style".
+            -->
+            <p style="color: red; font-weight: bold;">
+                Eu sou um texto com a cor inicial vermelha vinda do CSS Inline. 
+                DESAFIO: Tente mudar minha cor diretamente aqui neste arquivo HTML substituindo red por green!
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- ======================================================== -->
+        <!-- SESSÃO 2: SELETORES                                      -->
+        <!-- ======================================================== -->
+        <section id="seletores">
+            <h2>2. Tipos de Seletores</h2>
+            
+            <p>Selecione todas as tags &lt;p&gt; lá no arquivo style.css e perceba o que acontece.</p>
+            
+            <div class="destaque">
+                <h3>Selectores de Classe (Identificados por ponto '.')</h3>
+                <p>Eu sou um parágrafo dentro de uma 'div' com a classe "destaque".</p>
+                <p>A classe é como um clube VIP: qualquer elemento que receba a "pulseiraVIP" (nome da classe) receberá o mesmo estilo.</p>
+            </div>
+
+            <h3>Seletor de ID (Identificador com hashtag '#')</h3>
+            <p id="paragrafo-unico">
+                Eu tenho um "ID" exclusivo marcado como 'paragrafo-unico'. O ID é como o CPF. 
+                Diferente da classe, não existem duas pessoas na mesma página carregando o mesmo CPF!
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- ======================================================== -->
+        <!-- SESSÃO 3: POSICIONAMENTOS (O quebra-cabeça clássico)     -->
+        <!-- ======================================================== -->
+        <section id="posicionamentos">
+            <h2>3. Entendendo o Posicionamento Clássico</h2>
+            <p>Vamos brincar com o arquivo <b>`style.css`</b> para mover estas caixas e quebrar a barreira do simples alinhamento textual.</p>
+
+            <div class="quadrado flutua-esquerda">
+                Eu devo flutuar à Esquerda.
+            </div>
+
+            <div class="quadrado flutua-direita">
+                Eu devo flutuar à Direita.
+            </div>
+
+            <!-- Essa div vazia com clear both obriga que o conteúdo pule as flutuações e não colida visualmente -->
+            <div style="clear: both;"></div> 
+
+            <div class="container-relativo">
+                <p>Eu sou a caixa TERRENO (Contêiner Relativo).</p>
+                
+                <div class="caixa-absoluta">
+                    Eu sou o DRONE (Posição Absoluta)!
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!--
+    ======================================================================
+    [ COMENTÁRIO DIDÁTICO - PROF. RONALDO ]
+    
+    Por que existem 3 formas de usar CSS (Inline, <style> e arquivo externo)?
+    R: Nos primórdios da web, os sites tinham 1 página simples e era fácil 
+    estilizar atributo por atributo (Inline). Mas imagine projetar um ERP 
+    com centenas de telas! Precisamos de regras centralizadas (Arquivo Externo) 
+    para trocar a cor da marca com uma única linha em um único arquivo, injetando
+    a mesma folha de estilo em centenas de arquivos .html.
+
+    *** Analogia: ***
+    O casamento entre Absolute e Relative no CSS opera exatamente como as 
+    coordenadas baseadas num mapa topográfico. O Relative (div pai) demarca 
+    qual é a borda do "estado/quarteirão". O Absolute (div filha) diz: 
+    "A partir da borda do meu estado (meu pai), eu andarei exatos 10 pixels 
+    para a esquerda!" Ele desrespeita o fluxo normal fluído e vira um layout fixado e flutuante
+    com base no contêiner delimitador.
+
+    *** DESAFIOS DE CÓDIGO (No próprio HTML): ***
+    1. Ache a Forma 2 (Tag <style>) no topo (head) do HTML e resolva o desafio lá exigido.
+    2. Compreenda visualmente o papel da 'div' com um simples style 'clear: both;'. 
+       Ela age como uma barreira que diz: "Não obedeça ao fato dos itens acima estarem flutuando de lado".
+    ======================================================================
+    -->
+    
+</body>
+</html>
