@@ -1,28 +1,257 @@
 /*
 ======================================================================
-[ AULA DE CSS - PROF. RONALDO ]
+[ ATIVIDADE PRÁTICA DE CSS - PROF. RONALDO / IFPI ] 
 
 Olá, Turma! 
-Este é o arquivo onde toda a mágica visual e beleza vão acontecer.
-Nosso objetivo principal na aula é preencher as regras em branco e experimentar 
-na prática como alterar algo aqui se propaga instantaneamente para os HTMLs.
+Bem-vindos ao nosso "Canteiro de Obras". O HTML construiu os pilares, e 
+agora o nosso trabalho aqui no arquivo style.css é pintar, colocar 
+os vidros nas janelas e fazer o planejamento de como os móveis 
+ficarão distribuídos nas telas do computador e celular.
 
-Dica aos alunos: 
-Mantenham um dos arquivos HTML (ex: landing.html) aberto como aba no 
-seu navegador e usem o live preview (live server se tiverem). Observem a rígida 
-barreira de responsabilidades no front-end: a marcação manda no 'Conteúdo' do 
-projeto enquanto a estilização cascata constrói a 'Aparência' e reatividade.
+COMO USAR ESTE ARQUIVO:
+- Este arquivo está segmentado em 9 passos seguindo o nosso guia.
+- Leia o "Por que fazer isso?" (Ele é a nossa lógica!).
+- No bloco "O que fazer / O que usar", você terá o roteiro da sua tarefa.
+- Escreva seu código logo abaixo de cada bloco "SEU CÓDIGO AQUI".
+
+Bora codar!
 ======================================================================
 */
 
-/* 1. Seletores Básicos de Elementos - A Base da Herança */
-body {
-    /* Desafio: Colocar o background da página global para um cinza muito claro (#f4f6f9), 
-       remover quebras de margem com margin 0, e definir 'font-family: sans-serif' */
-}
+/* ======================================================================
+   PASSO 1: Configuração Inicial e Variáveis (A "Fundação")
+   ====================================================================== */
 
-/* 2. Hierarquia e Classes Customizadas 
-   Podem virar regras potentes (Aguardamos os desafios de classe!) */
+/* 
+  Questão 1.1: Importar a fonte base.
+  -> Por que fazer? Queremos que nosso site utilize uma fonte moderna 
+     e não a padrão (e antiquada) do seu navegador de internet. 
+  -> O que fazer: Importe a família 'Outfit' usando a regra do CSS de importação.
+  -> O que usar: @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+*/
+/* SEU CÓDIGO AQUI: */
 
 
-/* 3. Grid e Flexbox Responsivos (Sua vez na folha mestra) */
+/* 
+  Questão 1.2: A nossa "Paleta de Cores" Universal (Variáveis).
+  -> Por que fazer? Imagine se mudassem o botão pra verde; sem as variáveis
+     você caçaria 100 linhas diferentes! Usando o pseudo-seletor ":root", 
+     ela fica viva globalmente.
+  -> O que fazer: Configure as suas variáveis dentro do :root
+  -> O que usar: 
+     --bg-light: #f8f9fa;
+     --primary-color: #4361ee;
+     --text-dark: #333;
+*/
+/* SEU CÓDIGO AQUI: */
+
+
+
+/* 
+  Questão 1.3: O Reset Básico (A Faxina).
+  -> Por que fazer? Cada browser (Chrome, Safari, Firefox) traz margens e 
+     recuos defeituosos de fábrica. Precisamos zerar tudo. O box-sizing fará as
+     caixas calcularem seu próprio estufamento de bordas pro lado de dentro, não pra fora!
+  -> O que fazer: Usar o seletor universal para margin, padding e box-sizing.
+  -> O que usar:
+     Seletor '*'
+     margin: 0; padding: 0; box-sizing: border-box;
+*/
+/* SEU CÓDIGO AQUI: */
+
+
+
+/* 
+  Questão 1.4: O Corpo do App (body).
+  -> Por que fazer? Usar o fundo do "body" como pilar principal de cor e aplicar nossa fonte.
+  -> O que fazer: Usar var() pra puxar a cor clara pro background, e usar a fonte Outfit.
+  -> O que usar: 
+     font-family: 'Outfit', sans-serif; 
+     background-color: var(--bg-light); 
+     color: var(--text-dark);
+*/
+/* SEU CÓDIGO AQUI: */
+
+
+
+/* ======================================================================
+   PASSO 2: Componentes Reutilizáveis (A Receita de Bolo dos Botões)
+   ====================================================================== */
+
+/* 
+  Questão 2.1: A Classe Base de Botões.
+  -> Por que fazer? Evitar de reescrever a largura e estética de borda do 
+     nosso botão toda vez. Criando o `.btn`, preparamos a "Massa" do bolo básica.
+  -> O que fazer: Arredondar os cantos, espaçar pro dedão no mobile ser confortável, 
+     retirar a borda padrão e transição em animação lenta.
+  -> O que usar:
+     padding: 10px 20px; border-radius: 8px; border: none; 
+     cursor: pointer; font-weight: 600; transition: all 0.3s ease;
+*/
+/* SEU CÓDIGO AQUI: */
+
+
+/* 
+  Questão 2.2: O "Sabor" do botão base: Primário.
+  -> Por que fazer? Adicionar a camada de cor por cima da base que preparamos.
+  -> O que fazer: Mudar a cor de fundo utilizando as var() universais.
+  -> O que usar: background-color com var(--primary-color) e cor do texto branca.
+*/
+/* SEU CÓDIGO AQUI: */
+
+
+
+/* 
+  Questão 2.3: Interação ao sobrepor o Mouse (Hover).
+  -> Por que fazer? Todo sistema precisa mostrar vida e responsividade nas suas 
+     ferramentas, avisar visualmente a pessoa que o botão vai ser engatilhado se for apertado.
+  -> O que fazer: Acrescentar uma sombrinha suave na vida da caixa do botão.
+  -> O que usar:
+     Seletor .btn-primary:hover
+     box-shadow: 0 4px 10px rgba(67, 97, 238, 0.4); 
+     transform: translateY(-2px);
+*/
+/* SEU CÓDIGO AQUI: */
+
+
+
+/* ======================================================================
+   PASSO 3: O Layout Global (Flexbox no Cabeçalho)
+   ====================================================================== */
+
+/* 
+  Questão 3.1: O Menu Principal Pegajoso com varal Elástico (Flex).
+  -> Por que fazer? O Flexbox é um "varal elástico". Ele espalhará para as
+     extremidades os elementos internos da nossa página, e prenderá no topo para nunca afundar.
+  -> O que fazer: Torne-o flexível, espalhe o conteúdo até extremidade ("space-between"),
+     alinhe verticalmente e cole a placa lá encima com o filtro vidro (blur)!
+  -> O que usar:
+     display: flex; justify-content: space-between; align-items: center;
+     padding: 20px 50px; position: sticky; top: 0; backdrop-filter: blur(10px);
+*/
+/* SEU CÓDIGO AQUI: */
+
+
+
+/* 
+  Questão 3.2: O alinhamento dos links de Menu.
+  -> Por que fazer? Tirar a feiúra de ficar esticado encostando lado a lado agrupando num container nav.
+  -> O que fazer e usar: Na classe .nav-menu coloque 'display: flex;' e 'gap: 20px;' para criar o espaçamento. 
+  Nas âncoras (.nav-menu a) use 'text-decoration: none;' para sumir os riscos feios do html padrao velho.
+*/
+/* SEU CÓDIGO AQUI: */
+
+
+
+/* ======================================================================
+   PASSO 4: O "Mágico" CSS Grid (Cards na Landing Page)
+   ====================================================================== */
+
+/* 
+  Questão 4.1: Nossa tela de impacto visual (A vitrine).
+  -> Por que fazer? Forçar que nossa parte frontal use o máximo do aparelho dele (notebook ou tela super wide) 
+     para impactar via largura flex.
+  -> O que usar na .hero-section : 'min-height: 80vh;' 'display: flex;' 'align-items: center;' 'justify-content: center;'
+*/
+/* SEU CÓDIGO AQUI: */
+
+
+
+/* 
+  Questão 4.2: O container de Grid de Mosaico para Cartões de Informação.
+  -> Por que fazer? O "CSS Grid" lida em 2 dimensões. Ele é o mágico que joga elementos em linhas
+     novas apenas se ele perceber que a largura do computador foi violada (O auto-fit minimal).
+  -> O que fazer e usar: Nela escreva no css .cards-container: 'display: grid;' 
+     'grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));' 'gap: 30px;' 'padding: 40px;'
+*/
+/* SEU CÓDIGO AQUI: */
+
+
+
+/* 
+  Questão 4.3: Pintando os tijolos do Grid (Cards).
+  -> Por que fazer? Dar borda, sombra isoladora e movimento interativo.
+  -> O que fazer na classe .card: Adicione 'background: white; border-radius: 12px; 
+      padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;'
+  -> Desafio Bônus: Assim que criar o normal, Crie também a pseudoclasse de `:hover` flutuativa '.card:hover' subindo '-10px' na tela com um 'transform: translateY(...);'!
+*/
+/* SEU CÓDIGO AQUI: */
+
+
+
+/* ======================================================================
+   PASSO 5: Entradas de Formulários (O palco guiável)
+   ====================================================================== */
+
+/* 
+  Questão 5.1: O quadro mágico invisível e a largura das bordas de Input.
+  -> Por que fazer? Espremer textos colados no campo prejudicam a dedilhagem em Mobile. 
+  -> O que usar em .login-box: 'max-width: 400px; background: white; padding: 30px; border-radius: 12px;'
+  -> O que usar no .form-group label : 'display: block; margin-bottom: 8px;'
+  -> O que usar em .form-control : 'width: 100%; padding: 12px; border: 1px solid #ddd;
+     border-radius: 6px; font-family: inherit;'
+*/
+/* SEUS SELETORES AQUI (.login-box / .form-group label / .form-control): */
+
+
+
+/* 
+  Questão 5.2: O "Holofote de Teatro" (Efeito CSS de Foco Interativo).
+  -> Por que fazer? Mostrar a pessoa de qual telinha ele está inserindo letras no teclado exatamente naquele segundo (sinalizar ao invés de confundir).
+  -> O que usar no '.form-control:focus': 'outline: none;' 'border-color: var(--primary-color);' 
+     'box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);'
+*/
+/* SEU CÓDIGO AQUI: */
+
+
+
+/* ======================================================================
+   PASSO 6 e 7: Dashboard e Tabelas Zebradas Elegantes
+   ====================================================================== */
+
+/*
+  Questão 6.1: Zebrado na nossa Tabela!
+  -> Por que fazer? Você já tentou ler centenas de linhas brancas lado a lado? Dá tontura. 
+     Vamos alternar fundo escuros e claros baseado nos blocos de estrutura matemáticos usando a magica dos the pseudoclasses ímpares e pares (even x odd). 
+  -> O que usar na '.tabela-aulas': 'width: 100%; border-collapse: collapse;'
+  -> O que usar na '.tabela-aulas th, .tabela-aulas td': 'padding: 15px; border-bottom: 1px solid #eee;'
+  -> O Mágico '.tabela-aulas tbody tr:nth-child(even)' : 'background-color: #fcfcfc;'
+  -> A trilha do Rastro '.tabela-aulas tbody tr:hover td' : 'background-color: #f1f5fa;'
+*/
+/* SEUS SELETORES AQUI: */
+
+
+
+/* ======================================================================
+   PASSO 8: Animações Premium (Keyframes) - Opcional Avançado
+   ====================================================================== */
+/* 
+   Questão 8.1: A porta que abre macia e gradual com a Inércia (Keyframes)
+   -> Por que fazer? Telas de recarga secas assustam usuários (saltam na tela parecendo bugs). Embaixo do seletor 'from' criamos o ponto (Zero de Opacidade, y = -20px); O seletor do alvo 'to' chega no final visívelmente total com y=0px).
+   -> O que usar:
+   @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+   }
+*/
+/* SEU CÓDIGO AQUI: */
+
+
+
+/* ======================================================================
+   PASSO 9: Responsividade para Celulares (Media Queries)
+   ====================================================================== */
+/* 
+  Questão 9.1: Esmagando e convertendo as coisas pros limites do Mobile.
+  -> Por que fazer? A televisão plana horizontal e o monitor do aluno acaba de rodar violentamente se tornando um celular vertical estreito e o layout horizontal tá quebrando feio!
+  -> O que fazer: Crie um bloco que "Vigia" a barra de 768px (`@media (max-width: 768px) { ... }`).
+  Dentro desse bloco, force que o ".main-header" altere seu `flex-direction` para 'column'. 
+  Encolha a letra do Título em ".hero-text h2" usando 'font-size: 2rem;'.
+  Derrube as Multiplas Colunas do grid que era ".cards-container" assumindo 'grid-template-columns: 1fr;'
+*/
+
+/* SEU CÓDIGO MODIFICADOR AQUI: */
+
+
+
+/* FIM DO ARQUIVO! - Se concluíu isto, você já domina os princípios sagrados modernos de CSS Front-End! */
