@@ -175,7 +175,12 @@ body {
    backdrop-filter: blur(20px);
    /* desfoca o que tiver atraz */
 }
-
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    letter-spacing: -1px;
+}
 
 /* 
   Questão 3.2: O alinhamento dos links de Menu.
@@ -191,13 +196,20 @@ body {
 }
 
 .nav-menu a {
-   text-decoration: none;
+   text-decoration: none; /* tira o sublinhado do link*/
    color: var(--text-dark);
 }
 
-.nav-menu a:hover {
+.nav-menu a:hover { /* aponta o ponteiro do mouse */
    color: var(--primary-color);
-   text-shadow: 0 0 8px rgba(74, 144, 225, 0.2);
+   text-shadow: 0 0 8px rgba(74, 144, 225, 0.2); /* brilho em volta */
+}
+
+.nav-menu ul{
+   display: flex;    /* muda a lista para horizontal */
+   gap: 30px;        /* espaço entre os itens */
+   list-style-type: none; /* retira os pontos */
+   font-weight: bold;
 }
 
 
@@ -213,14 +225,39 @@ body {
 */
 /* SEU CÓDIGO AQUI: */
 .hero-section {
-   /* border: red 2px solid; */
+   border: red 2px solid;
    min-height: 80vh;
-   /* viewport heigth */
    display: flex;
    align-items: center;
-   /* alinha verticalmete */
    justify-content: center;
-   /* alinha horizontalmente*/
+   text-align: center;
+   color: white;
+   background: linear-gradient(135deg, rgba(39, 39, 73, 0.9),rgba(61, 61, 114, 0.8)) ,url("img/hero-bg.jpg") center/cover; 
+}
+.hero-section h2{
+   border: greenyellow 2px solid;
+   margin-bottom: 30px; 
+   font-size: 3.5rem;
+   animation: fadeInDown 0.5s linear; /* resolver na proxima aula */
+   
+}
+@keyframes fadeInDown {
+   from{
+      opacity: 0;
+      transform: translateY(-12px);
+   }
+   to{
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+.btn
+.hero-section p {
+   border: blue 2px solid;
+   font-size: 1.2rem;
+   margin-bottom: 10px;
+   animation: fadeInUp 1s linear; /* resolver na proxima aula */
 }
 
 /* 
