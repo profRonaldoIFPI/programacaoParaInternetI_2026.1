@@ -106,12 +106,13 @@ body {
 */
 /* SEU CÓDIGO AQUI: */
 .btn {
-   padding: 10px 20px;
-   border-radius: 8px;
+   padding: 15px 25px;
+   border-radius: 25px;
    border: none;
    cursor: pointer;
    font-weight: 600;
-   transition: all 0.2s ease;
+   /* transition: all 0.2s ease; */
+   text-decoration: none;
 }
 
 
@@ -127,6 +128,7 @@ body {
 .btn-primary {
    background-color: var(--primary-color);
    color: var(--bg-light);
+   transition: transform 0.2s ease-out;
 }
 
 
@@ -143,7 +145,8 @@ body {
 /* SEU CÓDIGO AQUI: */
 .btn-primary:hover {
    box-shadow: 0 4px 10px rgba(67, 97, 238, 0.4);
-   transform: translateY(-2px);
+   transition: transform 0.2s ease-in;
+   /* transform: translateY(10px); */
 }
 
 
@@ -172,8 +175,9 @@ body {
    position: sticky;
    /* fixa posição */
    top: 0;
-   backdrop-filter: blur(20px);
+   backdrop-filter: blur(10px);
    /* desfoca o que tiver atraz */
+   background-color: rgba(255,255,255,0.95);
 }
 .logo {
     font-size: 1.8rem;
@@ -225,7 +229,7 @@ body {
 */
 /* SEU CÓDIGO AQUI: */
 .hero-section {
-   border: red 2px solid;
+   /* border: red 2px solid; */
    min-height: 80vh;
    display: flex;
    align-items: center;
@@ -234,8 +238,11 @@ body {
    color: white;
    background: linear-gradient(135deg, rgba(39, 39, 73, 0.9),rgba(61, 61, 114, 0.8)) ,url("img/hero-bg.jpg") center/cover; 
 }
-.hero-section h2{
-   border: greenyellow 2px solid;
+.hero-text{
+   /* border: greenyellow 2px solid; */
+}
+.hero-text h2{
+   /* border: greenyellow 2px solid; */
    margin-bottom: 30px; 
    font-size: 3.5rem;
    animation: fadeInDown 0.5s linear; /* resolver na proxima aula */
@@ -251,15 +258,40 @@ body {
       transform: translateY(0);
    }
 }
-
-.btn
-.hero-section p {
-   border: blue 2px solid;
+.hero-text p {
+   /* border: blue 2px solid; */
    font-size: 1.2rem;
-   margin-bottom: 10px;
-   animation: fadeInUp 1s linear; /* resolver na proxima aula */
+   margin-bottom: 25px;
+   animation: fadeInUp 1s ease 0.5s both; /* resolver na proxima aula */
+            /*
+            nome do keyframe 
+            duração da animação
+            função tempo
+            atraso pro inicio da animação
+            sincroniza animações/tempos
+            */
 }
 
+@keyframes fadeInUp{
+   from{
+      opacity: 0;
+      transform: translateY(12px);
+   }
+   to{
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+.features-section{
+   text-align: center;
+}
+.features-section h2{
+   font-size: 2.5rem;
+   font-weight: bolder;   
+}
+.features-section::after{
+    background-color: var(--primary-color);
+   }
 /* 
   Questão 4.2: O container de Grid de Mosaico para Cartões de Informação.
   -> Por que fazer? O "CSS Grid" lida em 2 dimensões. Ele é o mágico que joga elementos em linhas
@@ -269,7 +301,7 @@ body {
 */
 /* SEU CÓDIGO AQUI: */
 .cards-container {
-   border: red solid 2px;
+   /* border: red solid 2px; */
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
    gap: 30px;
@@ -292,6 +324,12 @@ body {
    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
    transition: transform 0.2s ease-out;
 }
+.card h3{
+   font-size: 1.5rem;
+   margin-bottom: 15px;
+   color: var(--primary-color);
+   font-weight: bolder;
+}
 
 .card:hover {
    /* quando aponta para o elemento */
@@ -300,7 +338,20 @@ body {
    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
    transition: transform 0.2s ease-in;
 }
+/* FOOTER */
+.main-footer {
+   text-align: center;
+   /* border: red 2px solid; */
+   padding: 35px;
+   color: #ffffff;
+   background-color: #333;
+   
+}
 
+
+
+
+/* FOOTER */
 /* ======================================================================
    PASSO 5: Entradas de Formulários (O palco guiável)
    ====================================================================== */
