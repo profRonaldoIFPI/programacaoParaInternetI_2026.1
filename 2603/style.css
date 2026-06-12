@@ -31,7 +31,7 @@ Bora codar!
 */
 /* SEU CÓDIGO AQUI: */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
 
 /* 
   Questão 1.2: A nossa "Paleta de Cores" Universal (Variáveis).
@@ -46,12 +46,11 @@ Bora codar!
 */
 /* SEU CÓDIGO AQUI: */
 :root {
-   /* variáveis */
-   --bg-light: #f8f9fa;
-   --primary-color: #4361ee;
-   --text-dark: #333;
+  /* variáveis */
+  --bg-light: #f8f9fa;
+  --primary-color: #4361ee;
+  --text-dark: #333;
 }
-
 
 /* 
   Questão 1.3: O Reset Básico (A Faxina).
@@ -65,12 +64,11 @@ Bora codar!
 */
 /* SEU CÓDIGO AQUI: */
 * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   /*revisaremos*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*revisaremos*/
 }
-
 
 /* 
   Questão 1.4: O Corpo do App (body).
@@ -83,12 +81,11 @@ Bora codar!
 */
 /* SEU CÓDIGO AQUI: */
 body {
-   /* max-height: 100vh; */
-   font-family: 'Outfit', sans-serif;
-   background-color: var(--bg-light);
-   color: var(--text-dark);
+  /* max-height: 100vh; */
+  font-family: "Outfit", sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
 }
-
 
 /* ======================================================================
    PASSO 2: Componentes Reutilizáveis (A Receita de Bolo dos Botões)
@@ -106,16 +103,14 @@ body {
 */
 /* SEU CÓDIGO AQUI: */
 .btn {
-   padding: 15px 25px;
-   border-radius: 25px;
-   border: none;
-   cursor: pointer;
-   font-weight: 600;
-   /* transition: all 0.2s ease; */
-   text-decoration: none;
+  padding: 15px 25px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  /* transition: all 0.2s ease; */
+  text-decoration: none;
 }
-
-
 
 /* 
   Questão 2.2: O "Sabor" do botão base: Primário.
@@ -126,11 +121,10 @@ body {
 /* SEU CÓDIGO AQUI: */
 
 .btn-primary {
-   background-color: var(--primary-color);
-   color: var(--bg-light);
-   transition: transform 0.2s ease-out;
+  background-color: var(--primary-color);
+  color: var(--bg-light);
+  transition: transform 0.2s ease-out;
 }
-
 
 /* 
   Questão 2.3: Interação ao sobrepor o Mouse (Hover).
@@ -144,11 +138,10 @@ body {
 */
 /* SEU CÓDIGO AQUI: */
 .btn-primary:hover {
-   box-shadow: 0 4px 10px rgba(67, 97, 238, 0.4);
-   transition: transform 0.2s ease-in;
-   /* transform: translateY(10px); */
+  box-shadow: 0 4px 10px rgba(67, 97, 238, 0.4);
+  transition: transform 0.2s ease-in;
+  /* transform: translateY(10px); */
 }
-
 
 /* ======================================================================
    PASSO 3: O Layout Global (Flexbox no Cabeçalho)
@@ -166,24 +159,24 @@ body {
 */
 /* SEU CÓDIGO AQUI: */
 .main-header {
-   /* border: red solid 1px; */
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   /* alinhamento vertical */
-   padding: 20px 50px;
-   position: sticky;
-   /* fixa posição */
-   top: 0;
-   backdrop-filter: blur(10px);
-   /* desfoca o que tiver atraz */
-   background-color: rgba(255,255,255,0.95);
+  /* border: red solid 1px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* alinhamento vertical */
+  padding: 20px 50px;
+  position: sticky;
+  /* fixa posição */
+  top: 0;
+  backdrop-filter: blur(10px);
+  /* desfoca o que tiver atraz */
+  background-color: rgba(255, 255, 255, 0.95);
 }
 .logo {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--primary-color);
-    letter-spacing: -1px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  letter-spacing: -1px;
 }
 
 /* 
@@ -194,28 +187,27 @@ body {
 */
 /* SEU CÓDIGO AQUI: */
 .nav-menu {
-
-   display: flex;
-   gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .nav-menu a {
-   text-decoration: none; /* tira o sublinhado do link*/
-   color: var(--text-dark);
+  text-decoration: none; /* tira o sublinhado do link*/
+  color: var(--text-dark);
 }
 
-.nav-menu a:hover { /* aponta o ponteiro do mouse */
-   color: var(--primary-color);
-   text-shadow: 0 0 8px rgba(74, 144, 225, 0.2); /* brilho em volta */
+.nav-menu a:hover {
+  /* aponta o ponteiro do mouse */
+  color: var(--primary-color);
+  text-shadow: 0 0 8px rgba(74, 144, 225, 0.2); /* brilho em volta */
 }
 
-.nav-menu ul{
-   display: flex;    /* muda a lista para horizontal */
-   gap: 30px;        /* espaço entre os itens */
-   list-style-type: none; /* retira os pontos */
-   font-weight: bold;
+.nav-menu ul {
+  display: flex; /* muda a lista para horizontal */
+  gap: 30px; /* espaço entre os itens */
+  list-style-type: none; /* retira os pontos */
+  font-weight: bold;
 }
-
 
 /* ======================================================================
    PASSO 4: O "Mágico" CSS Grid (Cards na Landing Page)
@@ -229,41 +221,42 @@ body {
 */
 /* SEU CÓDIGO AQUI: */
 .hero-section {
-   /* border: red 2px solid; */
-   min-height: 80vh;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   text-align: center;
-   color: white;
-   background: linear-gradient(135deg, rgba(39, 39, 73, 0.9),rgba(61, 61, 114, 0.8)) ,url("img/hero-bg.jpg") center/cover; 
+  /* border: red 2px solid; */
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background:
+    linear-gradient(135deg, rgba(39, 39, 73, 0.9), rgba(61, 61, 114, 0.8)),
+    url("img/hero-bg.jpg") center/cover;
 }
-.hero-text{
-   /* border: greenyellow 2px solid; */
+.hero-text {
+  /* border: greenyellow 2px solid; */
 }
-.hero-text h2{
-   /* border: greenyellow 2px solid; */
-   margin-bottom: 30px; 
-   font-size: 3.5rem;
-   animation: fadeInDown 0.5s linear; /* resolver na proxima aula */
-   
+.hero-text h2 {
+  /* border: greenyellow 2px solid; */
+  margin-bottom: 30px;
+  font-size: 3.5rem;
+  animation: fadeInDown 0.5s linear; /* resolver na proxima aula */
 }
 @keyframes fadeInDown {
-   from{
-      opacity: 0;
-      transform: translateY(-12px);
-   }
-   to{
-      opacity: 1;
-      transform: translateY(0);
-   }
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .hero-text p {
-   /* border: blue 2px solid; */
-   font-size: 1.2rem;
-   margin-bottom: 25px;
-   animation: fadeInUp 1s ease 0.5s both; /* resolver na proxima aula */
-            /*
+  /* border: blue 2px solid; */
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  animation: fadeInUp 1s ease 0.5s both; /* resolver na proxima aula */
+  /*
             nome do keyframe 
             duração da animação
             função tempo
@@ -272,26 +265,26 @@ body {
             */
 }
 
-@keyframes fadeInUp{
-   from{
-      opacity: 0;
-      transform: translateY(12px);
-   }
-   to{
-      opacity: 1;
-      transform: translateY(0);
-   }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.features-section{
-   text-align: center;
+.features-section {
+  text-align: center;
 }
-.features-section h2{
-   font-size: 2.5rem;
-   font-weight: bolder;   
+.features-section h2 {
+  font-size: 2.5rem;
+  font-weight: bolder;
 }
-.features-section::after{
-    background-color: var(--primary-color);
-   }
+.features-section::after {
+  background-color: var(--primary-color);
+}
 /* 
   Questão 4.2: O container de Grid de Mosaico para Cartões de Informação.
   -> Por que fazer? O "CSS Grid" lida em 2 dimensões. Ele é o mágico que joga elementos em linhas
@@ -301,12 +294,12 @@ body {
 */
 /* SEU CÓDIGO AQUI: */
 .cards-container {
-   /* border: red solid 2px; */
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-   gap: 30px;
-   /* espaço entre cards */
-   padding: 40px;
+  /* border: red solid 2px; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  /* espaço entre cards */
+  padding: 40px;
 }
 
 /* 
@@ -318,38 +311,34 @@ body {
 */
 /* SEU CÓDIGO AQUI: */
 .card {
-   background-color: white;
-   border-radius: 12px;
-   padding: 30px;
-   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-   transition: transform 0.2s ease-out;
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-out;
 }
-.card h3{
-   font-size: 1.5rem;
-   margin-bottom: 15px;
-   color: var(--primary-color);
-   font-weight: bolder;
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  font-weight: bolder;
 }
 
 .card:hover {
-   /* quando aponta para o elemento */
-   border: var(--primary-color) 1px solid;
-   transform: translateY(-10px);
-   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
-   transition: transform 0.2s ease-in;
+  /* quando aponta para o elemento */
+  border: var(--primary-color) 1px solid;
+  transform: translateY(-10px);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in;
 }
 /* FOOTER */
 .main-footer {
-   text-align: center;
-   /* border: red 2px solid; */
-   padding: 35px;
-   color: #ffffff;
-   background-color: #333;
-   
+  text-align: center;
+  /* border: red 2px solid; */
+  padding: 35px;
+  color: #ffffff;
+  background-color: #333;
 }
-
-
-
 
 /* FOOTER */
 /* ======================================================================
@@ -367,26 +356,25 @@ body {
 /* SEUS SELETORES AQUI (.login-box / .form-group label / ..form-group input): */
 
 .login-box {
-   border: red solid 1px;
-   max-width: 400px;
-   background-color: white;
-   padding: 30px;
-   border-radius: 12px;
+  border: red solid 1px;
+  max-width: 400px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
 }
 
 .form-group input {
-   border: #ddd solid 1px;
-   width: 100%;
-   padding: 12px;
-   border-radius: 6px;
-   font-family: inherit;
+  border: #ddd solid 1px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  font-family: inherit;
 }
 
 .form-group label {
-   display: block;
-   margin-bottom: 8px;
+  display: block;
+  margin-bottom: 8px;
 }
-
 
 /* 
   Questão 5.2: O "Holofote de Teatro" (Efeito CSS de Foco Interativo).
@@ -397,11 +385,10 @@ body {
 /* SEU CÓDIGO AQUI: */
 
 .form-group input:focus {
-   outline: none;
-   border-color: var(--primary-color);
-   box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
 }
-
 
 /* ======================================================================
    PASSO 6 e 7: Dashboard e Tabelas Zebradas Elegantes
@@ -418,8 +405,6 @@ body {
 */
 /* SEUS SELETORES AQUI: */
 
-
-
 /* ======================================================================
    PASSO 8: Animações Premium (Keyframes) - Opcional Avançado
    ====================================================================== */
@@ -434,8 +419,6 @@ body {
 */
 /* SEU CÓDIGO AQUI: */
 
-
-
 /* ======================================================================
    PASSO 9: Responsividade para Celulares (Media Queries)
    ====================================================================== */
@@ -449,7 +432,5 @@ body {
 */
 
 /* SEU CÓDIGO MODIFICADOR AQUI: */
-
-
 
 /* FIM DO ARQUIVO! - Se concluíu isto, você já domina os princípios sagrados modernos de CSS Front-End! */

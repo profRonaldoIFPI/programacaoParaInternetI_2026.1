@@ -1,57 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Painel do Aluno - Sinfonia</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="bg-light">
-    <div class="dashboard-wrapper display-flex">
-        <aside class="sidebar bg-dark" id="menu-lateral">
-            <div class="perfil-card text-center">
-                <img src="../img/avatar.png" alt="Foto de perfil do aluno" class="avatar-img rounded-circle">
-                <p class="nome-aluno">Olá, <strong>Estudante</strong>!</p>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="row mh-100">
+      <aside class="col-2 text-bg-dark p-3" id="menu-lateral">
+        <div class="perfil-card text-center">
+          <img
+            src="../img/avatar.png"
+            alt="Foto de perfil do aluno"
+            class="avatar-img rounded-circle"
+          />
+          <p class="nome-aluno">Olá, <strong>Estudante</strong>!</p>
+        </div>
+
+        <nav>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a href="home.html" class="nav-link">Painel Inicial</a>
+            </li>
+            <li class="nav-item">
+              <a href="table.html" class="nav-link">Minha Grade</a>
+            </li>
+            <li class="nav-item">
+              <a href="landing.html" class="nav-link">Sair</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="col m-2">
+        <header class="">
+          <h2 class="">Resumo dos seus Cursos</h2>
+          <button class="btn" id="btn-msg">
+            Mensagens <span class="badge text-bg-secondary">0</span>
+          </button>
+        </header>
+
+        <section class="row">
+          <article class="card col m-2 shadow">
+            <div class="card-body">
+              <h3 class="card-title">Teoria Musical I</h3>
+              <p class="card-text">Prof. Mozart</p>
+              <span class="">Concluído</span>
             </div>
-            
-            <nav class="sidebar-nav nav-vertical">
-                <ul>
-                    <li><a href="home.html" class="nav-link active">Painel Inicial</a></li>
-                    <li><a href="table.html" class="nav-link">Minha Grade</a></li>
-                    <li><a href="landing.html" class="nav-link logout-link">Sair</a></li>
-                </ul>
-            </nav>
-        </aside>
+          </article>
 
-        <main class="dashboard-content container-fluid">
-            <header class="top-bar space-between pb-2 mt-2 border-bottom">
-                <h2 class="titulo-sessao">Resumo dos seus Cursos</h2>
-                <button class="btn btn-outline" id="btn-msg">Mensagens (0)</button>
-            </header>
+          <article class="card col m-2 shadow">
+            <div class="card-body">
+              <h3 class="card-title">Prática de Conjunto</h3>
+              <p class="card-text">Prof. Beethoven</p>
+              <div class="progress">
+                <div class="progress-bar" style="width: 60%"></div>
+              </div>
+            </div>
+          </article>
 
-            <section class="cards-grid display-grid mt-3">
-                <article class="curso-card stat-concluido">
-                    <h3 class="curso-titulo">Teoria Musical I</h3>
-                    <p class="curso-prof">Prof. Mozart</p>
-                    <span class="badge badge-green text-uppercase">Concluído</span>
-                </article>
+          <article class="card col m-2 shadow">
+            <div class="card-body">
+              <h3 class="card-title">Harmonia Funcional</h3>
+              <p class="card-text">Prof. Bach</p>
+              <a class="btn btn-primary">Pendente Novo Semestre</a>
+            </div>
+          </article>
+        </section>
+      </main>
 
-                <article class="curso-card stat-andamento">
-                    <h3 class="curso-titulo">Prática de Conjunto</h3>
-                    <p class="curso-prof">Prof. Beethoven</p>
-                    <span class="badge badge-yellow text-uppercase">Em Andamento (60%)</span>
-                    <div class="progress-bar-bg mt-1">
-                        <div class="progress-fill" style="width: 60%"></div>
-                    </div>
-                </article>
-
-                <article class="curso-card stat-pendente">
-                    <h3 class="curso-titulo">Harmonia Funcional</h3>
-                    <p class="curso-prof">Prof. Bach</p>
-                    <span class="badge badge-red text-uppercase">Pendente Novo Semestre</span>
-                </article>
-            </section>
-        </main>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"
+      ></script>
     </div>
 
     <!--
@@ -78,5 +104,5 @@
        perfeito no CSS? (Dica: property border-radius)
     ======================================================================
     -->
-</body>
+  </body>
 </html>

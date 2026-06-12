@@ -1,55 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro - Sinfonia Escola de Música</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="cadastro-container">
-        <header class="text-center">
-            <h1 class="logo">Sinfonia</h1>
-            <h2>Matricule-se na orquestra!</h2>
-            <p>Preencha os dados abaixo para criar o seu perfil.</p>
-        </header>
+      <header class="text-center">
+        <h1 class="logo">Sinfonia</h1>
+        <h2>Matricule-se na orquestra!</h2>
+        <p>Preencha os dados abaixo para criar o seu perfil.</p>
+      </header>
 
-        <section class="form-section">
-            <form id="form-cadastro" action="home.html" method="get">
-                <fieldset class="grupo-dados">
-                    <legend>Ficha Cadastral do Novo Músico</legend>
+      <section class="container-sm w-50 p-3 border rounded">
+        <form id="form-cadastro" action="home.html" method="get">
+          <fieldset class="grupo-dados">
+            <legend>Ficha Cadastral do Novo Músico</legend>
 
-                    <div class="form-group row">
-                        <label for="nome">Nome completo:</label>
-                        <input type="text" id="nome" name="nome" required>
-                    </div>
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome completo:</label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                required
+                class="form-control"
+              />
+            </div>
 
-                    <div class="form-group row">
-                        <label for="nascimento">Data de nascimento:</label>
-                        <input type="date" id="nascimento" name="nascimento" required>
-                    </div>
+            <div class="mb-3">
+              <label for="nascimento" class="form-label"
+                >Data de nascimento:</label
+              >
+              <input
+                type="date"
+                id="nascimento"
+                name="nascimento"
+                required
+                class="form-control"
+              />
+            </div>
 
-                    <div class="form-group row">
-                        <label for="instrumento">Qual o foco do seu estudo?</label>
-                        <select id="instrumento" name="instrumento">
-                            <option value="piano">Teclado / Piano</option>
-                            <option value="violao">Corda (Violão Clássico / Popular)</option>
-                            <option value="violino">Corda Friccionada (Violino/Cello)</option>
-                            <option value="canto">Voz (Canto Lírico / Popular)</option>
-                            <option value="percussao">Percussão e Bateria</option>
-                        </select>
-                    </div>
-                </fieldset>
+            <div class="mb-3">
+              <label for="instrumento" class="form-label"
+                >Qual o foco do seu estudo?</label
+              >
+              <select id="instrumento" name="instrumento" class="form-control">
+                <option value="piano">Teclado / Piano</option>
+                <option value="violao">
+                  Corda (Violão Clássico / Popular)
+                </option>
+                <option value="violino">
+                  Corda Friccionada (Violino/Cello)
+                </option>
+                <option value="canto">Voz (Canto Lírico / Popular)</option>
+                <option value="percussao">Percussão e Bateria</option>
+              </select>
+            </div>
+          </fieldset>
 
-                <div class="form-actions display-flex gap-2 text-center mt-3">
-                    <a href="landing.html" class="btn btn-secondary">Cancelar e Voltar</a>
-                    <button type="submit" class="btn btn-success focus-pulse" id="btn-salvar">Finalizar
-                        Matrícula</button>
-                </div>
-            </form>
-        </section>
+          <div class="mb-3">
+            <a href="landing.html" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-primary" id="btn-salvar">
+              Finalizar Matrícula
+            </button>
+          </div>
+        </form>
+      </section>
     </div>
 
     <!--
@@ -73,6 +96,5 @@
     2. Pinte o plano de fundo do seletor suspenso (select) usando o ID `#instrumento` da cor cinza.
     ======================================================================
     -->
-</body>
-
+  </body>
 </html>
