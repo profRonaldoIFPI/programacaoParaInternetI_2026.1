@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao JavaScript - Guia Interativo</title>
+    <meta name="description" content="Um painel interativo de introdução ao JavaScript com exemplos práticos de variáveis, funções, loops e manipulação do DOM.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Scripts JS deferidos para carregar em segundo plano e manter ordem de execução -->
+    <script src="js/variaveis.js" defer></script>
+    <script src="js/funcoes.js" defer></script>
+    <script src="js/estruturas.js" defer></script>
+    <script src="js/dom.js" defer></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Cabeçalho Principal -->
+        <header class="hero-header">
+            <h1 class="hero-title">Explorando o JavaScript</h1>
+            <p class="hero-subtitle">Um laboratório interativo para entender variáveis, funções, estruturas de controle e a manipulação em tempo real da árvore do DOM.</p>
+        </header>
+
+        <!-- Layout em Grid do Dashboard -->
+        <main class="dashboard-grid">
+            
+            <!-- Painel Esquerdo: Interatividade e Testes de Código -->
+            <section class="demos-panel" aria-label="Demonstrações Interativas">
+                
+                <!-- 1. Variáveis e Tipos de Dados -->
+                <article class="demo-card" id="card-variaveis">
+                    <h2 class="demo-card-title">1. Variáveis & Tipos de Dados <span>variaveis.js</span></h2>
+                    <form id="form-variaveis" class="interactive-group">
+                        <p class="text-description" style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">
+                            Insira suas informações abaixo. O JavaScript irá processar os dados dinamicamente e verificar seus tipos primitivos correspondentes.
+                        </p>
+                        <div class="input-row">
+                            <div class="input-field">
+                                <label for="input-nome">Qual seu nome?</label>
+                                <input type="text" id="input-nome" placeholder="Digite seu nome..." required autocomplete="name">
+                            </div>
+                            <div class="input-field">
+                                <label for="input-nascimento">Ano de Nascimento</label>
+                                <input type="number" id="input-nascimento" placeholder="Ex: 2004" min="1900" max="2026" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary" id="btn-submit-variaveis">
+                            Processar Entrada
+                        </button>
+                    </form>
+                    <div class="result-display" id="result-variaveis" aria-live="polite">
+                        <span style="color: var(--text-dark); font-size: 0.9rem; font-style: italic;">Aguardando entrada de dados...</span>
+                    </div>
+                </article>
+
+                <!-- 2. Funções em Ação -->
+                <article class="demo-card" id="card-funcoes">
+                    <h2 class="demo-card-title">2. Funções & Operações <span>funcoes.js</span></h2>
+                    <div class="interactive-group">
+                        <p class="text-description" style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">
+                            Insira dois números e escolha uma operação. A página invocará funções pré-definidas no JavaScript para obter o resultado.
+                        </p>
+                        <div class="input-row">
+                            <div class="input-field">
+                                <label for="input-num1">Número A</label>
+                                <input type="number" id="input-num1" value="10" step="any">
+                            </div>
+                            <div class="input-field">
+                                <label for="input-num2">Número B</label>
+                                <input type="number" id="input-num2" value="5" step="any">
+                            </div>
+                        </div>
+                        <div class="button-row" style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                            <button type="button" class="btn-primary" id="btn-somar">Somar (A + B)</button>
+                            <button type="button" class="btn-secondary" id="btn-multiplicar">Multiplicar (A &times; B)</button>
+                        </div>
+                    </div>
+                    <div class="result-display" id="result-calculo" aria-live="polite">
+                        <span style="color: var(--text-dark); font-size: 0.9rem; font-style: italic;">Aguardando operação...</span>
+                    </div>
+                </article>
+
+                <!-- 3. Loops e Repetições -->
+                <article class="demo-card" id="card-estruturas">
+                    <h2 class="demo-card-title">3. Repetições & Loops <span>estruturas.js</span></h2>
+                    <div class="interactive-group">
+                        <p class="text-description" style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">
+                            Defina o limite de iterações do loop. O script executará um bloco repetitivo e gerará elementos de bolinhas numeradas dinamicamente no DOM.
+                        </p>
+                        <div class="input-row">
+                            <div class="input-field">
+                                <label for="input-loop-limite">Quantidade de elementos (1 a 50)</label>
+                                <input type="number" id="input-loop-limite" min="1" max="50" value="10">
+                            </div>
+                        </div>
+                        <button type="button" class="btn-primary" id="btn-gerar-loop">Executar Loop & Gerar Nós</button>
+                    </div>
+                    <div class="result-display" aria-live="polite">
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 500;">
+                            Clique em uma bolinha gerada para ativar/desativar uma classe CSS dinâmica nela:
+                        </p>
+                        <div class="loop-output" id="container-dots">
+                            <span style="color: var(--text-dark); font-size: 0.9rem; font-style: italic;">Clique no botão acima para gerar a sequência.</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 4. Laboratório do DOM -->
+                <article class="demo-card" id="card-dom">
+                    <h2 class="demo-card-title">4. Laboratório de Manipulação do DOM <span>dom.js</span></h2>
+                    <div class="interactive-group">
+                        <p class="text-description" style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">
+                            Demonstração prática de escuta de eventos, alteração de estilos CSS, toggling de classes e injeção de nós dinâmicos.
+                        </p>
+                        
+                        <div class="input-row">
+                            <div class="input-field">
+                                <label for="input-dom-text">Texto da Caixa de Preview (Atualiza ao digitar)</label>
+                                <input type="text" id="input-dom-text" placeholder="Digite algo para alterar a caixa..." autocomplete="off">
+                            </div>
+                        </div>
+                        
+                        <div class="input-row" style="align-items: flex-end;">
+                            <div class="input-field">
+                                <label for="select-theme">Escolher Tema Visual (Adiciona classe CSS)</label>
+                                <select id="select-theme">
+                                    <option value="">Padrão (Cinza)</option>
+                                    <option value="neon-violet">Neon Violeta</option>
+                                    <option value="neon-cyan">Neon Ciano</option>
+                                    <option value="neon-emerald">Neon Esmeralda</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn-secondary" id="btn-toggle-glow" style="height: 46px; display: inline-flex; align-items: center;">
+                                Alternar Efeito Glow
+                            </button>
+                        </div>
+
+                        <div class="input-row" style="margin-top: 1rem; border-top: 1px solid var(--border-glow); padding-top: 1rem;">
+                            <div class="input-field">
+                                <label for="input-list-item">Novo Item para Lista Dinâmica (Criação de nós com delete)</label>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <input type="text" id="input-list-item" placeholder="Ex: Estudar Eventos..." style="flex: 1;">
+                                    <button type="button" class="btn-primary" id="btn-add-list-item" style="padding: 0 1.2rem;">Adicionar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Caixa de Visualização do DOM Reativa -->
+                    <div class="result-display" style="margin-top: 1.5rem; padding: 0.2rem; background: transparent; border: none;">
+                        <div class="preview-box" id="dom-target-box">
+                            <h3 class="box-preview-title">Área de Visualização</h3>
+                            
+                            <div class="dynamic-list-container">
+                                <ul class="dynamic-list" id="dom-custom-list">
+                                    <!-- Itens da lista entrarão aqui dinamicamente -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- Painel Direito: Console Virtual e Visualizador de Código Fonte -->
+            <section class="dev-panel" aria-label="Console e Código">
+                
+                <!-- Console Virtual Simulando Saída JavaScript -->
+                <article class="console-card">
+                    <header class="console-header">
+                        <div class="console-decorations">
+                            <span class="console-dot red"></span>
+                            <span class="console-dot yellow"></span>
+                            <span class="console-dot green"></span>
+                        </div>
+                        <h2 class="console-title">Console JavaScript Virtual</h2>
+                        <button type="button" class="console-action-btn" id="btn-limpar-console">Limpar</button>
+                    </header>
+                    <div class="console-logs-container" id="console-logs" role="log" aria-live="polite">
+                        <!-- Logs dinâmicos inseridos aqui pelo dom.js -->
+                    </div>
+                </article>
+
+                <!-- Code Viewer com abas para ler os arquivos .js criados -->
+                <article class="code-viewer-card">
+                    <header class="code-tabs">
+                        <button class="tab-btn active" data-target="code-variaveis">variaveis.js</button>
+                        <button class="tab-btn" data-target="code-funcoes">funcoes.js</button>
+                        <button class="tab-btn" data-target="code-estruturas">estruturas.js</button>
+                        <button class="tab-btn" data-target="code-dom">dom.js</button>
+                    </header>
+                    <div class="code-content-wrapper">
+<pre id="code-variaveis" class="code-block active"><code>/**
+ * EXEMPLO 1: Variáveis e Tipos de Dados em JavaScript
+ */
+
+// Declaração de Variáveis
+let nomeUsuario = "Visitante"; 
+nomeUsuario = "Explorador do JS"; // Reatribuição permitida
+
+const anoAtual = new Date().getFullYear();
+
+// Tipos de Dados Básicos (Primitivos)
+const stringExemplo = "JavaScript é incrível!"; 
+const numeroExemplo = 42;                        
+const floatExemplo = 3.14159;                    
+const booleanExemplo = true;                     
+const nuloExemplo = null;                        
+let indefinidoExemplo;                           
+
+// Tipos de Dados Complexos (Objetos)
+const arrayLinguagens = ["JavaScript", "HTML", "CSS", "Python"];
+const objetoCurso = {
+    nome: "Programação para Internet I",
+    ano: 2026,
+    semestre: "1º",
+    modulo: "JS Básico"
+};</code></pre>
+
+<pre id="code-funcoes" class="code-block"><code>/**
+ * EXEMPLO 2: Funções em JavaScript
+ */
+
+// 1. Função Tradicional (Named Function)
+// Possui hoisting (pode ser chamada antes de declarada)
+function saudar(nome) {
+    return `Olá, ${nome}! Seja bem-vindo ao aprendizado de JavaScript.`;
+}
+
+// 2. Expressão de Função (Function Expression)
+const calcularIdade = function(anoNascimento) {
+    const anoAtual = new Date().getFullYear();
+    return anoAtual - anoNascimento;
+};
+
+// 3. Arrow Function (Funções de Seta - ES6+)
+// Retorno implícito de uma única linha
+const somar = (a, b) => a + b;
+
+const converterParaMaiusculas = texto => texto.toUpperCase();
+
+// Arrow function composta
+const gerarSaudacaoPersonalizada = (nome, anoNascimento) => {
+    const idade = calcularIdade(anoNascimento);
+    const saudacao = saudar(nome);
+    return `${saudacao} Você tem ${idade} anos.`;
+};</code></pre>
+
+<pre id="code-estruturas" class="code-block"><code>/**
+ * EXEMPLO 3: Estruturas de Decisão e Repetição
+ */
+
+// 1. Estruturas Condicionais (if / else if / else)
+function classificarIdade(idade) {
+    if (idade < 0) {
+        return "Idade inválida";
+    } else if (idade < 12) {
+        return "Criança";
+    } else if (idade < 18) {
+        return "Adolescente";
+    } else if (idade < 60) {
+        return "Adulto";
+    } else {
+        return "Idoso";
+    }
+}
+
+// 2. Estrutura Switch
+function traduzirCor(corIngles) {
+    switch (corIngles.toLowerCase()) {
+        case "red": return "Vermelho";
+        case "blue": return "Azul";
+        case "green": return "Verde";
+        case "yellow": return "Amarelo";
+        default: return "Cor desconhecida";
+    }
+}
+
+// 3. Estruturas de Repetição (Loops)
+// Loop FOR
+function gerarSequenciaNumerica(limite) {
+    const numeros = [];
+    for (let i = 1; i <= limite; i++) {
+        numeros.push(i);
+    }
+    return numeros;
+}
+
+// Loop WHILE
+function contagemRegressiva(inicio) {
+    const passos = [];
+    let contador = inicio;
+    while (contador > 0) {
+        passos.push(contador);
+        contador--;
+    }
+    passos.push("Decolar! 🚀");
+    return passos;
+}</code></pre>
+
+<pre id="code-dom" class="code-block"><code>/**
+ * EXEMPLO 4: Manipulação do DOM
+ */
+
+// Seleção de nós do HTML
+const domTargetBox = document.getElementById("dom-target-box");
+const inputDomText = document.getElementById("input-dom-text");
+
+// Alterar texto dinamicamente
+inputDomText.addEventListener("input", (e) => {
+    const texto = e.target.value;
+    const boxTitle = domTargetBox.querySelector(".box-preview-title");
+    boxTitle.textContent = texto || "Área de Visualização";
+});
+
+// Alterar classes de estilos CSS
+selectTheme.addEventListener("change", (e) => {
+    const theme = e.target.value;
+    domTargetBox.classList.remove("theme-neon-violet", "theme-neon-cyan");
+    if (theme) domTargetBox.classList.add(`theme-${theme}`);
+});
+
+// Criar elementos no DOM
+const li = document.createElement("li");
+li.className = "list-item";
+li.textContent = texto;
+domCustomList.appendChild(li); // Injetando nó filho</code></pre>
+                    </div>
+                </article>
+
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>
